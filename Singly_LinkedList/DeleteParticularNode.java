@@ -21,7 +21,6 @@ public class DeleteParticularNode {
         return temp;
     }
     static Node deleteNode(Node head, int x) {
-
     // Case 1: empty list
     if (head == null) return null;
 
@@ -48,6 +47,20 @@ public class DeleteParticularNode {
 
     return head;
 }
+ static Node deleteNodeUsingRecursion(Node curr,int y){
+    
+    if (curr == null) return null;
+
+    if(y==1){
+        Node temp=curr.next;
+        temp.next=curr.next;
+        return temp;
+    }
+    curr.next=deleteNodeUsingRecursion(curr.next,y+1);
+    return curr;
+ }
+
+
  // Print linked list
     static void printList(Node head) {
         Node temp = head;
@@ -64,9 +77,12 @@ public static void main(String[] args) {
           System.out.print("Original List: ");
         printList(head);
 
-        int x = 3; // delete 3rd node
+       // int x = 3; // delete 3rd node
+    //head = deleteNode(head, x);
 
-        head = deleteNode(head, x);
+    int y=3;
+    head=deleteNodeUsingRecursion( head, y);
+
 
         System.out.print("After Deletion: ");
         printList(head);
