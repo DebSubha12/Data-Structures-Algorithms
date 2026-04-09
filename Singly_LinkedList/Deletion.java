@@ -33,6 +33,28 @@ public class Deletion {
         return head.next; // move head to next node
     }
 
+    static Node deleteLast(Node head) {
+        // Case 1: empty list
+        if (head == null) {
+            return null;
+        }
+        // Case 2: only one node
+        if (head.next == null) {
+            return null;
+        }
+        Node curr = head;
+        Node prev = null;
+        // Traverse to last node
+        while (curr.next != null) {
+            prev = curr;
+            curr = curr.next;
+        }
+        // Remove last node
+        prev.next = null;
+
+        return head;
+    }
+
     // Print list
     static void printList(Node head) {
         Node temp = head;
@@ -44,12 +66,14 @@ public class Deletion {
 
     public static void main(String[] args) {
 
-        int arr[] = {2, 4, 6, 8, 10};
+        int arr[] = { 2, 4, 6, 8, 10 };
 
         Node head = createLinkedList(arr, 0, arr.length);
 
         // Call delete method
         head = deleteFirst(head);
+
+        head = deleteLast(head);
 
         // Print updated list
         printList(head);
