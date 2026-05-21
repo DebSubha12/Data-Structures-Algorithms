@@ -22,8 +22,18 @@ I have recently started practicing DSA and I am solving problems regularly to im
 
 ## 📂 Folder Structure
 
-* BinarySearch ✅
-* (More topics like Arrays, LinkedList, Stack, etc. will be added gradually)
+- Arrays ✅
+- BinarySearch ✅
+- CircularLinkedList ✅
+- DoublyLinkedList ✅
+- Queue ✅
+- Recursion ✅
+- SinglyLinkedList ✅
+- Sorting ✅
+- Strings ✅
+- Stack ✅
+
+(More topics will be added gradually)
 
 ---
 
