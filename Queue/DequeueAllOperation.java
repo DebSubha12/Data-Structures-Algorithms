@@ -32,6 +32,19 @@ public class DequeueAllOperation {
             return;
         }
     }
+    //Push Back Method
+    void push_back(int x){
+        if(Front==null){
+            Front=rear=new Node(x);
+            return;
+        }else{
+            Node temp=new Node(x);
+            rear.next=temp;
+            temp.prev=rear;
+            rear=temp;
+            return;
+        }
+    }
     // Display deque
     void display() {
         Node temp = Front;
@@ -44,9 +57,11 @@ public class DequeueAllOperation {
         System.out.println();
     }
     public static void main(String[] args) {
-        DequeueAllOperation a=new DequeueAllOperation();
-        a.push_front(10);
-        a.push_front(50);
-        a.display();
+        DequeueAllOperation dq=new DequeueAllOperation();
+        dq.push_front(10);
+        dq.push_front(50);
+        dq.push_back(20);
+        dq.push_back(90);
+        dq.display();
     }
 }
