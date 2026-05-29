@@ -45,6 +45,31 @@ public class DequeueAllOperation {
             return;
         }
     }
+    //Pop Front Means Delete elemrnt in front
+    void pop_front(){
+        if(Front==null){
+            return;}
+            Front =Front.next;
+            if(Front!=null){
+                Front.prev=null;
+            }else{
+                rear=null;
+            }
+    }
+    //pop Back
+    void pop_back(){
+        if(Front==null){
+            return;
+        }else{
+            Node temp=rear;
+            rear=rear.prev;
+            if(rear!=null){
+                rear.next=null;
+            }else{
+                Front=null;
+            }
+        }
+    }
     // Display deque
     void display() {
         Node temp = Front;
@@ -62,6 +87,12 @@ public class DequeueAllOperation {
         dq.push_front(50);
         dq.push_back(20);
         dq.push_back(90);
+        dq.display();
+        dq.pop_front();
+        System.out.println("After Delete/pop First Element");
+        dq.display();
+        dq.pop_back();
+        System.out.println("After Delete Last Element:");
         dq.display();
     }
 }
