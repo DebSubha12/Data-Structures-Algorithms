@@ -70,6 +70,22 @@ public class DequeueAllOperation {
             }
         }
     }
+    //start() method
+    void start(){
+        if(Front==null){
+            System.out.println("Deque is empty");
+        }else{
+            System.out.println( Front.data);
+        }
+    }
+    //End() method
+    void end(){
+          if(Front==null){
+             System.out.println("Deque is empty");
+        }else{
+            System.out.println( rear.data);
+        }
+    }
     // Display deque
     void display() {
         Node temp = Front;
@@ -87,6 +103,8 @@ public class DequeueAllOperation {
         dq.push_front(50);
         dq.push_back(20);
         dq.push_back(90);
+        dq.push_back(48);
+        dq.push_back(23);
         dq.display();
         dq.pop_front();
         System.out.println("After Delete/pop First Element");
@@ -94,5 +112,9 @@ public class DequeueAllOperation {
         dq.pop_back();
         System.out.println("After Delete Last Element:");
         dq.display();
+        System.out.print("The First Element:");
+        dq.start();
+        System.out.print("The Last Element:");
+        dq.end();
     }
 }
