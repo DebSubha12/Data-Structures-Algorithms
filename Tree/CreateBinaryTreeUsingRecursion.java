@@ -38,11 +38,34 @@ public class CreateBinaryTreeUsingRecursion {
         preorder(root.left);
         preorder(root.right);
     }
+    //In-Order 
+    static void inorder(Node root){
+        if(root==null){
+            return;
+        }
+        inorder(root.left);
+        System.out.print(root.data);
+        inorder(root.right);
+    }
+    //Post - Order
+    static void postorder(Node root){
+        if(root==null){
+            return;
+        }
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.data);
+    }
+    
     public static void main(String[] args) {
         System.out.print("Enter The root:");
         Node root;
         root=binaryTree();
-        System.out.print("Pre Order :");
+        System.out.println("Pre Order :");
         preorder(root);
+        System.out.println("In-Order");
+        inorder(root);
+        System.out.println("Post-Order");
+        postorder(root);
     }
 }
