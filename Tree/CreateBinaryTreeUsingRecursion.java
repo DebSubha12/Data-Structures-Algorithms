@@ -2,7 +2,7 @@ package Tree;
 
 import java.util.Scanner;
 
-public class CreateBinaryTreeUsingRecursion {
+public class CreateBinaryTreeUsingRecursion {   
     
     // Create Node
     public static class Node {
@@ -28,9 +28,21 @@ public class CreateBinaryTreeUsingRecursion {
         temp.right=binaryTree();
         return temp;
     }
+    //Traversal
+    //Pre-Order
+   static void preorder(Node root){
+        if(root==null){
+            return;
+        }
+        System.out.print(root.data);
+        preorder(root.left);
+        preorder(root.right);
+    }
     public static void main(String[] args) {
         System.out.print("Enter The root:");
         Node root;
         root=binaryTree();
+        System.out.print("Pre Order :");
+        preorder(root);
     }
 }
