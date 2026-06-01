@@ -1,0 +1,54 @@
+package Tree;
+  class Node {
+    int data;
+    Node left, right;
+
+    Node(int item) {
+        data = item;
+        left = right = null;
+    }
+}
+public class AllOperationBinaryTree {
+    //Count Leaves In Binary Tree
+    int countLeaves(Node node) {
+
+        // Base case
+        if (node == null) {
+            return 0;
+        }
+
+        // If leaf node
+        if (node.left == null && node.right == null) {
+            return 1;
+        }
+
+        // Count leaves in left and right subtree
+        return countLeaves(node.left) + countLeaves(node.right);
+    }
+
+    // Driver code
+    public static void main(String[] args) {
+
+        /*
+                 1
+               /   \
+              2     3
+             / \     \
+            4   5     6
+        */
+
+        Node root = new Node(1);
+
+        root.left = new Node(2);
+        root.right = new Node(3);
+
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+
+        root.right.right = new Node(6);
+
+        AllOperationBinaryTree obj = new AllOperationBinaryTree();
+
+        System.out.println("Leaf Nodes Count: " + obj.countLeaves(root));
+    }
+}
