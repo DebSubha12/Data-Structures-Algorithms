@@ -9,6 +9,13 @@ package Tree;
     }
 }
 public class AllOperationBinaryTree {
+    //Size Of Binary Tree
+    int totalNode(Node root){
+        if(root==null){
+            return 0;
+        }
+        return(1+totalNode(root.left)+totalNode(root.right));
+    }
     //Count Leaves In Binary Tree
     int countLeaves(Node node) {
 
@@ -50,5 +57,6 @@ public class AllOperationBinaryTree {
         AllOperationBinaryTree obj = new AllOperationBinaryTree();
 
         System.out.println("Leaf Nodes Count: " + obj.countLeaves(root));
+        System.out.println("Size Of Binary Tree: "+ obj.totalNode(root));
     }
 }
