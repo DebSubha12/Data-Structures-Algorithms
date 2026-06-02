@@ -36,6 +36,17 @@ public class AllOperationBinaryTree {
         return countLeaves(node.left) + countLeaves(node.right);
     }
 
+    //Count Non Leaf
+    int nonleaf(Node root){
+        if(root==null){
+            return 0;
+        }
+        if(root.left==null && root.right==null){
+            return 0;
+        }
+        return (1+nonleaf(root.left)+nonleaf(root.right));
+    }
+
     // Driver code
     public static void main(String[] args) {
 
@@ -61,5 +72,6 @@ public class AllOperationBinaryTree {
 
         System.out.println("Leaf Nodes Count: " + obj.countLeaves(root));
         System.out.println("Size Of Binary Tree: "+ obj.totalNode(root));
+        System.out.println("Non Leaf Nodes :"+obj.nonleaf(root));
     }
 }
