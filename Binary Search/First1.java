@@ -1,6 +1,8 @@
 public class First1 {
 
             //Index of First 1 in a Binary Sorted Infinite Array
+
+            
     public static int indexOfFirstOne(int arr[],int target){
         int low = 0, high = 1;
         while (target > arr[high]) {

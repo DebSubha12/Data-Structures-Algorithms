@@ -49,7 +49,7 @@ public class RemoveNthNodeFromEnd {
         head.next.next.next = new Node(4);
         head.next.next.next.next = new Node(5);
 
-        //int n=2;
+        
 
         System.out.println("Original List:");
         obj.printList(head);
